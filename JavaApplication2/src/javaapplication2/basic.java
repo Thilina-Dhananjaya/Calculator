@@ -2,23 +2,28 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+
+
 package javaapplication2;
 
 /**
  *
  * @author UserA
  */
+
 public class basic extends javax.swing.JFrame {
 
     double var1=0,var2=0, ans=0;
+    String s1="",s2="" , tot="";
     char sym='@';
     boolean equ=false;
+    int inc1=1,inc2=1;
     
     public basic() {
         initComponents();
+        Display.setHorizontalAlignment(Display.CENTER);
+        Display.setText("Enter Your Equation...");
         
-        
-     
     }
 
     /**
@@ -30,13 +35,13 @@ public class basic extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        back = new javax.swing.JButton();
         Display = new javax.swing.JTextField();
         n4 = new javax.swing.JButton();
         n3 = new javax.swing.JButton();
         n7 = new javax.swing.JButton();
         n2 = new javax.swing.JButton();
         n5 = new javax.swing.JButton();
-        mod = new javax.swing.JButton();
         n8 = new javax.swing.JButton();
         n9 = new javax.swing.JButton();
         n6 = new javax.swing.JButton();
@@ -54,8 +59,36 @@ public class basic extends javax.swing.JFrame {
         setLocationByPlatform(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Display.setText("Display");
+        back.setBackground(new java.awt.Color(153, 0, 0));
+        back.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 36)); // NOI18N
+        back.setForeground(new java.awt.Color(51, 102, 255));
+        back.setText("<");
+        back.setAlignmentY(0.2F);
+        back.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
+        back.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        back.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                backMouseDragged(evt);
+            }
+        });
+        back.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backMouseClicked(evt);
+            }
+        });
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
+            }
+        });
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, 70, 40));
+
+        Display.setBackground(new java.awt.Color(204, 204, 204));
+        Display.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Display.setForeground(new java.awt.Color(51, 51, 51));
+        Display.setText("Enter Your Equation...");
         Display.setActionCommand("<Not Set>");
+        Display.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
         Display.setName(""); // NOI18N
         Display.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -72,17 +105,25 @@ public class basic extends javax.swing.JFrame {
                 DisplayVetoableChange(evt);
             }
         });
-        getContentPane().add(Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 410, 80));
+        getContentPane().add(Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 410, 80));
 
+        n4.setBackground(new java.awt.Color(0, 51, 51));
+        n4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        n4.setForeground(new java.awt.Color(204, 204, 204));
         n4.setText("4");
+        n4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
         n4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 n4MouseClicked(evt);
             }
         });
-        getContentPane().add(n4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 70, 40));
+        getContentPane().add(n4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 70, 40));
 
+        n3.setBackground(new java.awt.Color(0, 51, 51));
+        n3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        n3.setForeground(new java.awt.Color(204, 204, 204));
         n3.setText("3");
+        n3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
         n3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 n3MouseClicked(evt);
@@ -93,56 +134,61 @@ public class basic extends javax.swing.JFrame {
                 n3ActionPerformed(evt);
             }
         });
-        getContentPane().add(n3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 70, 40));
+        getContentPane().add(n3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 70, 40));
 
+        n7.setBackground(new java.awt.Color(0, 51, 51));
+        n7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        n7.setForeground(new java.awt.Color(204, 204, 204));
         n7.setText("7");
+        n7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
         n7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 n7MouseClicked(evt);
             }
         });
-        getContentPane().add(n7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 70, 40));
+        getContentPane().add(n7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 70, 40));
 
+        n2.setBackground(new java.awt.Color(0, 51, 51));
+        n2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        n2.setForeground(new java.awt.Color(204, 204, 204));
         n2.setText("2");
+        n2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
         n2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 n2MouseClicked(evt);
             }
         });
-        getContentPane().add(n2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 70, 40));
+        getContentPane().add(n2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 70, 40));
 
+        n5.setBackground(new java.awt.Color(0, 51, 51));
+        n5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        n5.setForeground(new java.awt.Color(204, 204, 204));
         n5.setText("5");
+        n5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
         n5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 n5MouseClicked(evt);
             }
         });
-        getContentPane().add(n5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 350, 70, 40));
+        getContentPane().add(n5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 70, 40));
 
-        mod.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 36)); // NOI18N
-        mod.setText("%");
-        mod.setInheritsPopupMenu(true);
-        mod.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                modMouseClicked(evt);
-            }
-        });
-        mod.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modActionPerformed(evt);
-            }
-        });
-        getContentPane().add(mod, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 70, 40));
-
+        n8.setBackground(new java.awt.Color(0, 51, 51));
+        n8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        n8.setForeground(new java.awt.Color(204, 204, 204));
         n8.setText("8");
+        n8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
         n8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 n8MouseClicked(evt);
             }
         });
-        getContentPane().add(n8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, 70, 40));
+        getContentPane().add(n8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, 70, 40));
 
+        n9.setBackground(new java.awt.Color(0, 51, 51));
+        n9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        n9.setForeground(new java.awt.Color(204, 204, 204));
         n9.setText("9");
+        n9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
         n9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 n9MouseClicked(evt);
@@ -153,19 +199,26 @@ public class basic extends javax.swing.JFrame {
                 n9ActionPerformed(evt);
             }
         });
-        getContentPane().add(n9, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 420, 70, 40));
+        getContentPane().add(n9, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, 70, 40));
 
+        n6.setBackground(new java.awt.Color(0, 51, 51));
+        n6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        n6.setForeground(new java.awt.Color(204, 204, 204));
         n6.setText("6");
+        n6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
         n6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 n6MouseClicked(evt);
             }
         });
-        getContentPane().add(n6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 70, 40));
+        getContentPane().add(n6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 310, 70, 40));
 
+        divide.setBackground(new java.awt.Color(0, 0, 51));
         divide.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 36)); // NOI18N
+        divide.setForeground(new java.awt.Color(51, 102, 255));
         divide.setText("/");
         divide.setAlignmentY(0.2F);
+        divide.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
         divide.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         divide.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
@@ -182,10 +235,13 @@ public class basic extends javax.swing.JFrame {
                 divideActionPerformed(evt);
             }
         });
-        getContentPane().add(divide, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 70, 40));
+        getContentPane().add(divide, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 70, 40));
 
+        multiplication.setBackground(new java.awt.Color(0, 0, 51));
         multiplication.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 36)); // NOI18N
+        multiplication.setForeground(new java.awt.Color(51, 102, 255));
         multiplication.setText("*");
+        multiplication.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
         multiplication.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 multiplicationMouseClicked(evt);
@@ -196,10 +252,13 @@ public class basic extends javax.swing.JFrame {
                 multiplicationActionPerformed(evt);
             }
         });
-        getContentPane().add(multiplication, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 70, 40));
+        getContentPane().add(multiplication, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 70, 40));
 
+        substract.setBackground(new java.awt.Color(0, 0, 51));
         substract.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 36)); // NOI18N
+        substract.setForeground(new java.awt.Color(51, 102, 255));
         substract.setText("-");
+        substract.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
         substract.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 substractMouseClicked(evt);
@@ -210,10 +269,12 @@ public class basic extends javax.swing.JFrame {
                 substractActionPerformed(evt);
             }
         });
-        getContentPane().add(substract, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 70, 40));
+        getContentPane().add(substract, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 70, 40));
 
+        addition.setBackground(new java.awt.Color(0, 0, 102));
         addition.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 36)); // NOI18N
         addition.setText("+");
+        addition.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
         addition.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 additionMouseClicked(evt);
@@ -224,10 +285,13 @@ public class basic extends javax.swing.JFrame {
                 additionActionPerformed(evt);
             }
         });
-        getContentPane().add(addition, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, 70, 130));
+        getContentPane().add(addition, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, 70, 130));
 
+        submit.setBackground(new java.awt.Color(102, 102, 102));
         submit.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 18)); // NOI18N
+        submit.setForeground(new java.awt.Color(0, 0, 0));
         submit.setText("=");
+        submit.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
         submit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 submitMouseClicked(evt);
@@ -238,9 +302,13 @@ public class basic extends javax.swing.JFrame {
                 submitActionPerformed(evt);
             }
         });
-        getContentPane().add(submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 460, 80, 50));
+        getContentPane().add(submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 440, 80, 50));
 
+        n1.setBackground(new java.awt.Color(0, 51, 51));
+        n1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        n1.setForeground(new java.awt.Color(204, 204, 204));
         n1.setText("1");
+        n1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
         n1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 n1MouseClicked(evt);
@@ -251,9 +319,13 @@ public class basic extends javax.swing.JFrame {
                 n1ActionPerformed(evt);
             }
         });
-        getContentPane().add(n1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 70, 40));
+        getContentPane().add(n1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 70, 40));
 
+        n0.setBackground(new java.awt.Color(0, 51, 51));
+        n0.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        n0.setForeground(new java.awt.Color(204, 204, 204));
         n0.setText("0");
+        n0.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
         n0.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 n0MouseClicked(evt);
@@ -264,10 +336,13 @@ public class basic extends javax.swing.JFrame {
                 n0ActionPerformed(evt);
             }
         });
-        getContentPane().add(n0, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 480, 70, 40));
+        getContentPane().add(n0, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 440, 70, 40));
 
-        clear.setBackground(new java.awt.Color(255, 0, 0));
+        clear.setBackground(new java.awt.Color(51, 0, 0));
+        clear.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        clear.setForeground(new java.awt.Color(204, 204, 204));
         clear.setText("C");
+        clear.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
         clear.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 clearMouseClicked(evt);
@@ -278,50 +353,83 @@ public class basic extends javax.swing.JFrame {
                 clearActionPerformed(evt);
             }
         });
-        getContentPane().add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, 70, 40));
+        getContentPane().add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 230, 70, 40));
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication2/best (1).jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 0, 550, 530));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 0, 530, 530));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
     private void updateDis(){
         
-        if(sym=='@'){
-             Display.setText(""+var1);
-        }
-        else{
-            Display.setText(var1+"  "+sym);
+        Display.setHorizontalAlignment(Display.CENTER);
+        
+        if(s1=="" && s2=="" && sym=='@'){
+            Display.setText("Enter Your Equation...");
         }
         
-        if(equ){
-            Display.setText(var1+"  "+sym+" = "+ans);
+        if(s1=="" && sym!='@'){
+            
+            sym='@';
+        }
+        if(s1!=""){
+            
+            Display.setText(s1);
+        }
+        if(s1!="" && sym!='@'){
+            Display.setText(s1+" "+sym );
+        }
+        if(s1!="" && sym!='@' && s2!=""){
+            Display.setText(s1+" "+sym+" "+s2 );
+        }
         
+        if(s1!="" && sym!='@' && s2!="" && equ){
+            int ans=getAns(s1,s2);
+            Display.setText(s1+" "+sym+" "+s2 +" = "+ans);
+            equ=false;
         }        
     }
-    
-    private void getVar(int val){
+       
+    private int getAns(String x,String y){
         
-        int inc=1;
-            if (sym=='@'){
-                if(val!=val){
-                   var1+=val*inc;
-                 inc*=10; 
-                }
-                else{
-                    var1*=10;
-                }
-            }
-            else{
-                if(val!=0){
-                   var2+=val*inc;
-                 inc*=10; 
-                }
-                else{
-                    var2*=10;
-                }
-            }            
+       int ans=0; 
+       int a= Integer.valueOf(x);
+       int b= Integer.valueOf(y);
+       
+       if(sym=='+'){
+           ans=a+b;
+       }
+       if(sym=='-'){
+           ans=a-b;
+       }
+       if(sym=='*'){
+           ans=a*b;
+       }
+       if(sym=='/'){
+           ans=a/b;
+       }
+       return ans;   
+    
+    }
+    
+    private void getVar(String s){
+            
+        if(sym=='@'){
+            s1=s1+s;
+            updateDis();
+        }
+        else if(s2==null){
+            updateDis();
+        }
+        else{
+            s2=s2+s;
+            updateDis();
+        }
+        
+        
+        
          updateDis();
     }
     
@@ -370,52 +478,52 @@ public class basic extends javax.swing.JFrame {
 
     private void n2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_n2MouseClicked
         
-        getVar(2);
+        getVar("2");
          
     }//GEN-LAST:event_n2MouseClicked
 
     private void n1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_n1MouseClicked
-        getVar(1);
+        getVar("1");
     }//GEN-LAST:event_n1MouseClicked
 
     private void n3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_n3MouseClicked
-        getVar(3);      // TODO add your handling code here:
+        getVar("3");      // TODO add your handling code here:
     }//GEN-LAST:event_n3MouseClicked
 
     private void n4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_n4MouseClicked
-       getVar(4);       // TODO add your handling code here:
+       getVar("4");       // TODO add your handling code here:
     }//GEN-LAST:event_n4MouseClicked
 
     private void n5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_n5MouseClicked
-        getVar(5);       // TODO add your handling code here:
+        getVar("5");       // TODO add your handling code here:
     }//GEN-LAST:event_n5MouseClicked
 
     private void n6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_n6MouseClicked
-        getVar(6);      // TODO add your handling code here:
+        getVar("6");      // TODO add your handling code here:
     }//GEN-LAST:event_n6MouseClicked
 
     private void n7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_n7MouseClicked
-        getVar(7);      // TODO add your handling code here:
+        getVar("7");      // TODO add your handling code here:
     }//GEN-LAST:event_n7MouseClicked
 
     private void n8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_n8MouseClicked
-        getVar(8);        // TODO add your handling code here:
+        getVar("8");        // TODO add your handling code here:
     }//GEN-LAST:event_n8MouseClicked
 
     private void n9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_n9MouseClicked
-        getVar(9);       // TODO add your handling code here:
+        getVar("9");       // TODO add your handling code here:
     }//GEN-LAST:event_n9MouseClicked
 
     private void n0MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_n0MouseClicked
-        // TODO add your handling code here:
+        getVar("0");// TODO add your handling code here:
     }//GEN-LAST:event_n0MouseClicked
 
     private void n0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_n0ActionPerformed
-        getVar(0);// TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_n0ActionPerformed
 
     private void DisplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisplayActionPerformed
-        Display.setText("put your text here");
+        
     }//GEN-LAST:event_DisplayActionPerformed
 
     private void submitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitMouseClicked
@@ -425,10 +533,6 @@ public class basic extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_submitMouseClicked
-
-    private void modMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modMouseClicked
-        sym='%';        // TODO add your handling code here:
-    }//GEN-LAST:event_modMouseClicked
 
     private void divideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideActionPerformed
      // TODO add your handling code here:
@@ -451,19 +555,23 @@ public class basic extends javax.swing.JFrame {
     }//GEN-LAST:event_divideMouseDragged
 
     private void divideMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_divideMouseClicked
-        sym='/';         // TODO add your handling code here:
+        sym='/'; 
+        updateDis();        // TODO add your handling code here:
     }//GEN-LAST:event_divideMouseClicked
 
     private void multiplicationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_multiplicationMouseClicked
-        sym='*';         // TODO add your handling code here:
+        sym='*';
+        updateDis();// TODO add your handling code here:
     }//GEN-LAST:event_multiplicationMouseClicked
 
     private void substractMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_substractMouseClicked
-        sym='-';         // TODO add your handling code here:
+        sym='-';
+        updateDis();// TODO add your handling code here:
     }//GEN-LAST:event_substractMouseClicked
 
     private void additionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_additionMouseClicked
-        sym='+';         // TODO add your handling code here:
+        sym='+';
+        updateDis();// TODO add your handling code here:
     }//GEN-LAST:event_additionMouseClicked
 
     private void DisplayMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DisplayMousePressed
@@ -476,9 +584,9 @@ public class basic extends javax.swing.JFrame {
     private void clearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearMouseClicked
         
         sym='@';
-        var1=0;
-        var2=0;
-                
+        s1="";
+        s2="";
+         updateDis();
         
         
     }//GEN-LAST:event_clearMouseClicked
@@ -487,9 +595,32 @@ public class basic extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_clearActionPerformed
 
-    private void modActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modActionPerformed
+    private void backMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseDragged
         // TODO add your handling code here:
-    }//GEN-LAST:event_modActionPerformed
+    }//GEN-LAST:event_backMouseDragged
+
+    private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
+        
+        if(s1!="" && sym=='@' && s2==""){
+            s1=Back.remLast(s1);
+            updateDis();
+        }
+        if(s1!="" && sym!='@' && s2==""){
+            sym='@';
+            updateDis();
+        }
+        if(s1!="" && sym!='@' && s2!=""){
+            s2=Back.remLast(s2);
+            updateDis();
+        }
+        
+        
+        
+    }//GEN-LAST:event_backMouseClicked
+
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_backActionPerformed
 
     /**
      * @param args the command line arguments
@@ -529,10 +660,10 @@ public class basic extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Display;
     private javax.swing.JButton addition;
+    private javax.swing.JButton back;
     private javax.swing.JButton clear;
     private javax.swing.JButton divide;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JButton mod;
     private javax.swing.JButton multiplication;
     private javax.swing.JButton n0;
     private javax.swing.JButton n1;
