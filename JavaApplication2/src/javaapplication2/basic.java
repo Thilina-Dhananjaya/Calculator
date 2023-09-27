@@ -10,8 +10,9 @@ package javaapplication2;
  */
 public class basic extends javax.swing.JFrame {
 
-    double var1=0,var2=0;
+    double var1=0,var2=0, ans=0;
     char sym='@';
+    boolean equ=false;
     
     public basic() {
         initComponents();
@@ -124,6 +125,11 @@ public class basic extends javax.swing.JFrame {
         mod.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 modMouseClicked(evt);
+            }
+        });
+        mod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modActionPerformed(evt);
             }
         });
         getContentPane().add(mod, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 70, 40));
@@ -274,13 +280,78 @@ public class basic extends javax.swing.JFrame {
         });
         getContentPane().add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, 70, 40));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\UserA\\Downloads\\df38145112c182276d09f615b614c885.jpg")); // NOI18N
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 0, 550, 530));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    private void updateDis(){
+        
+        if(sym=='@'){
+             Display.setText(""+var1);
+        }
+        else{
+            Display.setText(var1+"  "+sym);
+        }
+        
+        if(equ){
+            Display.setText(var1+"  "+sym+" = "+ans);
+        
+        }        
+    }
+    
+    private void getVar(int val){
+        
+        int inc=1;
+            if (sym=='@'){
+                if(val!=val){
+                   var1+=val*inc;
+                 inc*=10; 
+                }
+                else{
+                    var1*=10;
+                }
+            }
+            else{
+                if(val!=0){
+                   var2+=val*inc;
+                 inc*=10; 
+                }
+                else{
+                    var2*=10;
+                }
+            }            
+         updateDis();
+    }
+    
+    private void ans(){
+    
+        if(var1!=0 && var2!=0 && sym!='@'){
+            
+            if(sym=='+'){
+                ans=var1+var2;
+            }
+            else if(sym=='-'){
+                ans=var1-var2;
+            }
+            else if(sym=='*'){
+                ans=var1*var2;
+            }
+            else if(sym=='/'){
+                ans=var1/var2;
+            }
+            if(sym=='%'){
+                int x = (int) var1;
+                int y = (int) var2;
+                
+                ans=x%y;
+            }
+            
+        }
+    
+    }
+    
     private void n9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_n9ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_n9ActionPerformed
@@ -299,94 +370,40 @@ public class basic extends javax.swing.JFrame {
 
     private void n2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_n2MouseClicked
         
-        if(var1==0){
-            var1=2;            
-        }
-        else if(var2==0){
-            var2=2;
-        }
-        else{}
+        getVar(2);
          
     }//GEN-LAST:event_n2MouseClicked
 
     private void n1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_n1MouseClicked
-        if(var1==0){
-            var1=1;            
-        }
-        else if(var2==0){
-            var2=1;
-        }
-        else{}
+        getVar(1);
     }//GEN-LAST:event_n1MouseClicked
 
     private void n3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_n3MouseClicked
-    if(var1==0){
-            var1=3;            
-        }
-        else if(var2==0){
-            var2=3;
-        }
-        else{}        // TODO add your handling code here:
+        getVar(3);      // TODO add your handling code here:
     }//GEN-LAST:event_n3MouseClicked
 
     private void n4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_n4MouseClicked
-        if(var1==0){
-            var1=4;            
-        }
-        else if(var2==0){
-            var2=4;
-        }
-        else{}        // TODO add your handling code here:
+       getVar(4);       // TODO add your handling code here:
     }//GEN-LAST:event_n4MouseClicked
 
     private void n5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_n5MouseClicked
-        if(var1==0){
-            var1=5;            
-        }
-        else if(var2==0){
-            var2=5;
-        }
-        else{}        // TODO add your handling code here:
+        getVar(5);       // TODO add your handling code here:
     }//GEN-LAST:event_n5MouseClicked
 
     private void n6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_n6MouseClicked
-        if(var1==0){
-            var1=6;            
-        }
-        else if(var2==0){
-            var2=6;
-        }
-        else{}        // TODO add your handling code here:
+        getVar(6);      // TODO add your handling code here:
     }//GEN-LAST:event_n6MouseClicked
 
     private void n7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_n7MouseClicked
-        if(var1==0){
-            var1=7;            
-        }
-        else if(var2==0){
-            var2=7;
-        }
-        else{}        // TODO add your handling code here:
+        getVar(7);      // TODO add your handling code here:
     }//GEN-LAST:event_n7MouseClicked
 
     private void n8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_n8MouseClicked
-        if(var1==0){
-            var1=8;            
-        }
-        else if(var2==0){
-            var2=8;
-        }
-        else{}        // TODO add your handling code here:
+        getVar(8);        // TODO add your handling code here:
     }//GEN-LAST:event_n8MouseClicked
 
     private void n9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_n9MouseClicked
-        if(var1==0){
-            var1=9;            
-        }
-        else if(var2==0){
-            var2=9;
-        }
-        else{}        // TODO add your handling code here:
+        getVar(9);       // TODO add your handling code here:
     }//GEN-LAST:event_n9MouseClicked
 
     private void n0MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_n0MouseClicked
@@ -394,7 +411,7 @@ public class basic extends javax.swing.JFrame {
     }//GEN-LAST:event_n0MouseClicked
 
     private void n0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_n0ActionPerformed
-        // TODO add your handling code here:
+        getVar(0);// TODO add your handling code here:
     }//GEN-LAST:event_n0ActionPerformed
 
     private void DisplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisplayActionPerformed
@@ -402,9 +419,10 @@ public class basic extends javax.swing.JFrame {
     }//GEN-LAST:event_DisplayActionPerformed
 
     private void submitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_submitMouseClicked
-  
         
-        Display.setText(sym+" 000 "+ var1+" 000 "+var2);
+        equ=true;
+        updateDis();
+        
         
     }//GEN-LAST:event_submitMouseClicked
 
@@ -468,6 +486,10 @@ public class basic extends javax.swing.JFrame {
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_clearActionPerformed
+
+    private void modActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_modActionPerformed
 
     /**
      * @param args the command line arguments
