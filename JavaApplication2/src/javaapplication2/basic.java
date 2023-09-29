@@ -65,6 +65,7 @@ public class basic extends javax.swing.JFrame {
         back.setText("<");
         back.setAlignmentY(0.2F);
         back.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
+        back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         back.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         back.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
@@ -112,6 +113,7 @@ public class basic extends javax.swing.JFrame {
         n4.setForeground(new java.awt.Color(204, 204, 204));
         n4.setText("4");
         n4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
+        n4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         n4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 n4MouseClicked(evt);
@@ -124,6 +126,7 @@ public class basic extends javax.swing.JFrame {
         n3.setForeground(new java.awt.Color(204, 204, 204));
         n3.setText("3");
         n3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
+        n3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         n3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 n3MouseClicked(evt);
@@ -141,6 +144,7 @@ public class basic extends javax.swing.JFrame {
         n7.setForeground(new java.awt.Color(204, 204, 204));
         n7.setText("7");
         n7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
+        n7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         n7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 n7MouseClicked(evt);
@@ -153,6 +157,7 @@ public class basic extends javax.swing.JFrame {
         n2.setForeground(new java.awt.Color(204, 204, 204));
         n2.setText("2");
         n2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
+        n2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         n2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 n2MouseClicked(evt);
@@ -165,6 +170,7 @@ public class basic extends javax.swing.JFrame {
         n5.setForeground(new java.awt.Color(204, 204, 204));
         n5.setText("5");
         n5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
+        n5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         n5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 n5MouseClicked(evt);
@@ -177,6 +183,7 @@ public class basic extends javax.swing.JFrame {
         n8.setForeground(new java.awt.Color(204, 204, 204));
         n8.setText("8");
         n8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
+        n8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         n8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 n8MouseClicked(evt);
@@ -189,6 +196,7 @@ public class basic extends javax.swing.JFrame {
         n9.setForeground(new java.awt.Color(204, 204, 204));
         n9.setText("9");
         n9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
+        n9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         n9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 n9MouseClicked(evt);
@@ -206,6 +214,7 @@ public class basic extends javax.swing.JFrame {
         n6.setForeground(new java.awt.Color(204, 204, 204));
         n6.setText("6");
         n6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.black, java.awt.Color.black));
+        n6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         n6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 n6MouseClicked(evt);
@@ -219,6 +228,7 @@ public class basic extends javax.swing.JFrame {
         divide.setText("/");
         divide.setAlignmentY(0.2F);
         divide.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
+        divide.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         divide.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         divide.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
@@ -242,6 +252,7 @@ public class basic extends javax.swing.JFrame {
         multiplication.setForeground(new java.awt.Color(51, 102, 255));
         multiplication.setText("*");
         multiplication.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
+        multiplication.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         multiplication.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 multiplicationMouseClicked(evt);
@@ -259,6 +270,7 @@ public class basic extends javax.swing.JFrame {
         substract.setForeground(new java.awt.Color(51, 102, 255));
         substract.setText("-");
         substract.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
+        substract.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         substract.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 substractMouseClicked(evt);
@@ -275,6 +287,7 @@ public class basic extends javax.swing.JFrame {
         addition.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 36)); // NOI18N
         addition.setText("+");
         addition.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
+        addition.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addition.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 additionMouseClicked(evt);
@@ -292,6 +305,7 @@ public class basic extends javax.swing.JFrame {
         submit.setForeground(new java.awt.Color(0, 0, 0));
         submit.setText("=");
         submit.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
+        submit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         submit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 submitMouseClicked(evt);
@@ -309,6 +323,7 @@ public class basic extends javax.swing.JFrame {
         n1.setForeground(new java.awt.Color(204, 204, 204));
         n1.setText("1");
         n1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
+        n1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         n1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 n1MouseClicked(evt);
@@ -326,6 +341,7 @@ public class basic extends javax.swing.JFrame {
         n0.setForeground(new java.awt.Color(204, 204, 204));
         n0.setText("0");
         n0.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
+        n0.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         n0.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 n0MouseClicked(evt);
@@ -343,6 +359,7 @@ public class basic extends javax.swing.JFrame {
         clear.setForeground(new java.awt.Color(204, 204, 204));
         clear.setText("C");
         clear.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.black));
+        clear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clear.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 clearMouseClicked(evt);
@@ -386,17 +403,17 @@ public class basic extends javax.swing.JFrame {
         }
         
         if(s1!="" && sym!='@' && s2!="" && equ){
-            int ans=getAns(s1,s2);
-            Display.setText(s1+" "+sym+" "+s2 +" = "+ans);
+            double ans=getAns();
+            Display.setText(s1+" "+sym+" "+s2 +" = "+String. format("%.2f", ans));
             equ=false;
         }        
     }
        
-    private int getAns(String x,String y){
+    private double getAns(){
         
-       int ans=0; 
-       int a= Integer.valueOf(x);
-       int b= Integer.valueOf(y);
+       double ans=0; 
+       int a= Integer.valueOf(s1);
+       int b= Integer.valueOf(s2);
        
        if(sym=='+'){
            ans=a+b;
@@ -408,7 +425,7 @@ public class basic extends javax.swing.JFrame {
            ans=a*b;
        }
        if(sym=='/'){
-           ans=a/b;
+           ans=a*1.0/b*1.0;
        }
        return ans;   
     
@@ -433,7 +450,7 @@ public class basic extends javax.swing.JFrame {
          updateDis();
     }
     
-    private void ans(){
+    /*private void ans(){
     
         if(var1!=0 && var2!=0 && sym!='@'){
             
@@ -458,7 +475,7 @@ public class basic extends javax.swing.JFrame {
             
         }
     
-    }
+    }*/
     
     private void n9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_n9ActionPerformed
         // TODO add your handling code here:
