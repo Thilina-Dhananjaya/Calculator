@@ -372,9 +372,9 @@ public class basic extends javax.swing.JFrame {
         });
         getContentPane().add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 230, 70, 40));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication2/best (1).jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication2/1330535.png"))); // NOI18N
         jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 0, 530, 530));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 530));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
